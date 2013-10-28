@@ -1,4 +1,4 @@
-class UsersController < ActionController::Base
+class UserController < ActionController::Base
 
   def new
     @user = User.new
