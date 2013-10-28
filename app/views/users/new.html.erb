@@ -19,19 +19,3 @@
 </p>
 <% end %>
 
-<h1>Log in</h1>
-
-<%= form_for :user, url: users_path do |f| %>
-<p>
-  <%= f.label :Email %><br>
-  <%= f.text_field :email %>
-</p>
-
-<p>
-  <%= f.label :password %><br>
-  <%= f.text_field :password %>
-</p>
-<p>
-  <%= f.submit %>
-</p>
-<% end %>
