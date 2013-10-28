@@ -1,0 +1,16 @@
+<h1>Submit a new Link/Post</h1>
+
+<%= form_for :post do |f| %>
+<p>
+  <%= f.label :title %><br>
+  <%= f.text_field :title %>
+</p>
+
+<p>
+  <%= f.label :url %><br>
+  <%= f.text_field :url %>
+</p>
+<p>
+  <%= f.submit %>
+</p>
+<% end %>
