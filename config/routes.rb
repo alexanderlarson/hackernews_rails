@@ -1,6 +1,8 @@
 HncloneRails::Application.routes.draw do  
   resources :posts
   root :to => 'posts#index'
+
+  resources :users
 end
 
   # The priority is based upon order of creation:
