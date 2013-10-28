@@ -1,1 +1,16 @@
-<h1>Sup yall!</h1>
+<h1>Main Page - All Posts</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Url</th>
+  </tr>
+
+  <% @posts.each do |post| %>
+    <tr>
+      <td><%= post.title %></td>
+      <td><%= post.url %></td>
+      <td><%= link_to 'Show', post_path(post) %></td>
+    </tr>
+  <% end %>
+</table>
