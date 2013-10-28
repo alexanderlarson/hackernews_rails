@@ -8,8 +8,9 @@
 
   <% @posts.each do |post| %>
     <tr>
-      <td><%= link_to post.title %></td>
+      <td><%= post.title %></td>
       <td><%= post.url %></td>
+      <td><%= link_to 'Show', post_path(post) %></td>
     </tr>
   <% end %>
 </table>
