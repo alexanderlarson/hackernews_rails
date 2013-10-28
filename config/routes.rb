@@ -3,6 +3,12 @@ HncloneRails::Application.routes.draw do
   root :to => 'posts#index'
 
   resources :users
+  resources :user_sessions
+  resources :comments
+  
+  get "/login" => "user_sessions#new"
+  get "/logout" => "user_sessions#destroy"
+  get "/signup" => "users#new"
 end
 
   # The priority is based upon order of creation:

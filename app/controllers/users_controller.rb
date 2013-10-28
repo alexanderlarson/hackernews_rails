@@ -12,6 +12,7 @@ class UsersController < ActionController::Base
     else
       render 'new'
     end
+    session[:id] = @user.id
   end
 
   def show

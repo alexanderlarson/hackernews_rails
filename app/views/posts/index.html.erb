@@ -8,9 +8,17 @@
 
   <% @posts.each do |post| %>
     <tr>
-      <td><%= post.title %></td>
-      <td><%= post.url %></td>
-      <td><%= link_to 'Show', post_path(post) %></td>
+      <td><%= link_to "#{post.title}", post_path(post) %></td>
+      <td><%= link_to post.url, post.url %></td>
+      <td>Posted By: <%= "#{User.find(post.user_id).username}" %></td>
     </tr>
   <% end %>
 </table>
+
+<% if session[:id] == nil %>
+<%= link_to 'Login', login_path %>
+<%= link_to 'Sign up', signup_path %>
+<% else %>
+<%= link_to 'Create Post', new_post_path%>
+<%= link_to 'Logout', logout_path %>
+<% end %>

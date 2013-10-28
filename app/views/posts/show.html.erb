@@ -1,6 +1,26 @@
-<h1>Showing Post <%=@post.id%></h1>
-
+<h1>Showing Post <%=@post.title%></h1>
+Posted By: <%= link_to("#{User.find(@post.user_id).username}") %>
+<h3>Title</h3>
 <%= @post.title %>
 <br>
-<%= link_to @post.url %>
+<h3>URL:</h3>
+<%= link_to @post.url, @post.url %>
+<br><br>
+
+<% @post.comments.each do |comment| %>
+<%= comment.comment_text %>
+<% end %>
+
+<%= form_for :comments, url: post_path do |f| %>
+<p>
+  <%= f.label :Comment %><br>
+  <%= f.text_area :comment_text %>
+</p>
+<p>
+  <%= f.submit %>
+</p>
+<% end %>
 <%= link_to 'Back', posts_path %>
+
+
+

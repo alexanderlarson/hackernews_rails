@@ -8,8 +8,9 @@ class PostsController < ActionController::Base
   end
 
   def create
-    @post = Post.new(params[:post])
-    @post.save
+    @post = Post.create(params[:post])
+    @user = User.find(session[:id])
+    @user.posts << @post
     redirect_to @post
   end
 
